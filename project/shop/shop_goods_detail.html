@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title></title>
+		<script type="text/javascript">
+			document.write('<script src="../assets/js/lib/mount.js?rd=?rd=' + Math.random() + '"><\/script>');
+		</script>
+		<script type="text/javascript">
+			link(1,['../assets/css/shop_home.css','../assets/css/icons-extra.css']);
+		</script>
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="my_shop_goods_detail">
+			<!-- shop header start -->
+				<!-- <shop_top v-bind:title="title"> -->
+				<!-- 通过子组件的标签内v-bind:XXX="XXX"绑定需要传给子组件的参数，实例化子组件时在data{XXX:"String"}里定义参数内容，在子组件props接收参数并通过子组件的data赋值 -->
+				<!-- </shop_top>	 -->
+			<!-- shop header end -->
+
+			<!-- shop goods detail start -->
+				<shop_goods_detail>
+				</shop_goods_detail>
+			<!-- shop goods detail end -->
+
+			<!-- shop footer start -->
+				<!-- 底部选项卡在index父容器页面加载 -->
+			<!-- shop footer end -->
+		</div>
+	</body>
+	<script type="text/javascript">
+		script(1,['../assets/js/mui.previewimage.js']);
+	</script>
+	<script type="text/javascript">
+		var _self = {};
+		var _eventBus = my_shop_goods_detail = new Vue({
+			el: "#my_shop_goods_detail",
+			components: {
+				'shop_goods_detail': httpVueLoader('../components/shop_goods_detail.vue')
+			},
+			store: shop_store,
+			router: shop_router,
+			data: function() {
+				return {title : '商品详情'
+				}
+			}
+		});
+	</script>
+
+</html>

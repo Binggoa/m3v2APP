@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title></title>
+		<script type="text/javascript">
+			document.write('<script src="../assets/js/lib/mount.js?rd=?rd=' + Math.random() + '"><\/script>');
+		</script>
+		<script type="text/javascript">
+			link(1,['../assets/css/shop_home.css','../assets/css/icons-extra.css']);
+		</script>
+	</head>
+
+	<body>
+		<div id="my_shop_mine">
+		<!-- shop header start -->
+			<!-- <shop_top v-bind:title="title"> -->
+			<!-- 通过子组件的标签内v-bind:XXX="XXX"绑定需要传给子组件的参数，实例化子组件时在data{XXX:"String"}里定义参数内容，在子组件props接收参数并通过子组件的data赋值 -->
+			<!-- </shop_top>	 -->
+		<!-- shop header end -->
+		
+		<!-- shop my start -->
+			<shop_mine>
+			</shop_mine>
+		<!-- shop my end -->
+		
+		<!-- shop footer start -->
+			<!-- 底部选项卡在index父容器页面加载 -->
+		<!-- shop footer end -->
+		</div>
+	</body>
+	<script type="text/javascript">
+		script(1,[]);
+	</script>
+	<script type="text/javascript">
+		var _self = {};
+		var _eventBus = my_shop_mine = new Vue({
+			el: "#my_shop_mine",
+			components: {
+				'shop_mine': httpVueLoader('../components/shop_mine.vue')
+			},
+			store: shop_store,
+			router: shop_router,
+			data: function() {
+				return {title : '我的'
+				}
+			}
+		});
+	</script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<script type="text/javascript">
+			document.write('<script src="../assets/js/lib/mount.js?rd=?rd=' + Math.random() + '"><\/script>');
+		</script>
+		<script type="text/javascript">
+			link(1,['../assets/css/shop_home.css','../assets/css/icons-extra.css']);
+		</script>
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+				padding-bottom: 51px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="my_shop">
+			<!-- shop header start -->
+				<!-- 头部在内容页面加载	 -->
+			<!-- shop header end -->
+
+			<!-- shop home start -->
+				<!-- 主体内容在shop_home页面加载 -->
+			<!-- shop home end -->
+
+			<!-- shop footer start -->
+				<shop_bottom_tab v-bind:title="title" v-bind:activetab="activeTab" v-bind:tabbar="tabbar">
+				</shop_bottom_tab>
+			<!-- shop footer end -->
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		script(1,['../assets/js/common.js','../assets/js/native_bottom_tab.js']);
+	</script>
+	<script type="text/javascript">
+		var _self = {};
+		var _eventBus = my_shop = new Vue({
+			el: "#my_shop",
+			components: {
+				'shop_bottom_tab': httpVueLoader('../components/public/bottom/shop_bottom_tab.vue')
+			},
+			store: shop_store,
+			router: shop_router,
+			data: function() {
+				return {title: '底部导航',
+					activeTab: 'shop_home.html',
+					tabbar: [
+						{icon:'m-ao',title:'首页',url: 'shop_home.html'},
+						{icon:'m-am',title:'分类',url: 'shop_classify.html'},
+						{icon:'',title:'',url: ''},
+						{icon:'m-y',title:'购物车',url: 'shop_cart.html'},
+						{icon:'m-aq',title:'我的',url: 'shop_mine.html'}
+					]
+				}
+			}
+		});
+	</script>
+
+</html>
