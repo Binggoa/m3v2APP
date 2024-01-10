@@ -1,0 +1,1 @@
+Dir *.* /B > FilesName.txt
