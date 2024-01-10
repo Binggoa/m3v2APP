@@ -1,0 +1,18 @@
+res: {
+	"translation": ["好"],
+	"basic": {
+		"us-phonetic": "ɡʊd",
+		"phonetic": "ɡʊd",
+		"uk-phonetic": "ɡʊd",
+		"explains": ["adj. 好的；优良的；愉快的；虔诚的", "n. 好处；善行；慷慨的行为", "adv. 好", "n. (Good)人名；(英)古德；(瑞典)戈德"]
+	},
+	"query": "good",
+	"errorCode": 0,
+	"web": [{
+		"value": ["好的", "善", "良好", "商品"],
+		"key": "good"
+	}, {
+		"value": ["心灵捕手", "骄阳似我", "心魄捕手"],
+		"key": "Good Will Hunting"
+	}]
+}
